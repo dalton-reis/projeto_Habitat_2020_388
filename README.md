@@ -1,10 +1,10 @@
-# Integração Microcontrolador ESP32 + Sensor HC-SR04 com Unity
+# Integrando Microcontrolador ESP32 + Sensor HC-SR04 com Unity
 
 ![image](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/demo-projeto.gif)
 
 Este repositório pretende demostrar passo a passo como integrar um circuito gerenciado pelo microcontrolador ESP32 que recebe sinal de um sensor de distância ultrassônico HC-SR04 a uma aplicação Unity.
 
-## Desenvolvimento
+## Montagem do Circuito
 
 [Itens](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/itens.jpeg) utilizados.
 
@@ -16,12 +16,12 @@ Este repositório pretende demostrar passo a passo como integrar um circuito ger
 - 5x Fios para condução de energia, sendo um para o negativo.
 ```
 
-Com todos os [itens](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/itens.jpeg) “em mãos” podemos iniciar a montagem do circuito.
+Com todos os [itens](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/itens.jpeg) em mãos podemos iniciar a montagem do circuito.
 
 1. Encaixe o microcontrolador ESP32 na Protoboard.
     * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/1p.jpeg).
 
-2. Escolhas 4 fios (se possível de cores diferentes) e faça a conexão no sensor HC-SR04 nos pinos VCC, TRIG, ECHO, GND.
+2. Escolha 4 fios (se possível de cores diferentes) e faça a conexão no sensor HC-SR04 nos pinos VCC, TRIG, ECHO, GND.
     * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/2p.jpeg).
     * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/3p.jpeg).
 
@@ -46,7 +46,7 @@ Com todos os [itens](https://github.com/anderson-guimaraes/furb-integracao-esp32
 
 6. Você deve chegar no seguinte [resultado](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/8p.jpeg).
 
-Agora que o circuito está montado, você pode optar por implementar o código de forma "[simples](#Implementação-Simples)" ou "[avançada](#Implementação-Avançada)".
+Agora que o circuito está montado, você pode optar por implementar o código de forma [simples](#Implementação-Simples) ou [avançada](#Implementação-Avançada).
 
 ## Implementação Simples
 
@@ -76,7 +76,7 @@ Para esse modo o [Arduino IDE](https://www.arduino.cc/en/Main/Software_) deve se
 
     * Abra o monitor serial da IDE (canto superior direito) e selecione a velocidade 9600. A partir desse momento já é possível ver os dados captados pelo sensor.
 
- 8. Faça a integração com o [Unity](#Unity).
+ 8. Faça a integração com o [Unity](#Integracao-Com-Unity).
 
 ## Implementação Avançada
 Para esse modo o [Visual Studio](https://visualstudio.microsoft.com/pt-br/downloads/) deve ser instalado e os seguintes passos seguidos.
@@ -99,7 +99,7 @@ Para esse modo o [Visual Studio](https://visualstudio.microsoft.com/pt-br/downlo
 7. Faça deploy do código para dentro dos microcontrolador.
     * Abra o Package Manager Console e execute, substituindo "#" pelo número da sua COM:  
      nanoff --update --target ESP32_WROOM_32 --serialport COM#  
-     Se preferir, também é possível clicando com botão direito sobre a solução do projeto escolhendo "Deploy Solution".
+     Se preferir, também é possível clicar com o botão direito sobre a solução do projeto, e escolher "Deploy Solution".
 
     * Aguarde o deploy até identificar no Package Manager Console que o envio foi realizado com sucesso e que é necessário "Hard resetting via RTS pin...".
 
@@ -109,9 +109,9 @@ Para esse modo o [Visual Studio](https://visualstudio.microsoft.com/pt-br/downlo
 
     * Execute a depuração (F5) do projeto e abra o "output" da IDE em "View > Output" ou "ctrl + w + o". A partir desse momento já é possível ver os dados captados pelo sensor.
 
-8. Faça a integração com o [Unity](#Unity).
+8. Faça a integração com o [Unity](#Integracao-Com-Unity).
 
-## Unity
+## Integração com Unity
 
 Baixe o [Unity HUB](https://unity.com/pt/download) e instale a versão "2018.4.29f1" LTS.
 
@@ -125,7 +125,7 @@ Baixe o [Unity HUB](https://unity.com/pt/download) e instale a versão "2018.4.2
 
 * Distâncias entre 10 ~ 20 cm movem o cubo para a esqueda.
 
-## Conclusão
+## Referências
 
 Orientador:
 

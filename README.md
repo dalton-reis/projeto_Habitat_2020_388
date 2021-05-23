@@ -1,5 +1,7 @@
 # Integração Microcontrolador ESP32 + Sensor HC-SR04 com Unity
 
+--VIDEO
+
 Este repositório pretende demostrar passo a passo como integrar um circuito gerenciado pelo microcontrolador ESP32 que recebe sinal de um sensor de distância ultrassônico HC-SR04 a uma aplicação Unity.
 
 ## Desenvolvimento
@@ -20,22 +22,23 @@ Com todos os [itens](#Itens-Utilizados) “em mãos” podemos iniciar a montage
     * [exemplo](#Primeiro-Exemplo).
 
 2. Escolhas 4 fios (se possível de cores diferentes) e faça a conexão no sensor HC-SR04 nos pinos VCC, TRIG, ECHO, GND.
-    * [exemplo](#Primeiro-Exemplo).
+    * [exemplo](#Segundo-Exemplo).
 
-3. Recomendo que o sistema de [PINOUT](#PINOUT-ESP32) do microcontrolador ESP32 seja consultado.
+3. Recomendo que o sistema de [PINOUT](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/pinout.png) do microcontrolador ESP32 seja consultado.
 
-4. Faça a pinagem que conecta o sensor (HC-SR04) ao microcontrolador (ESP32) da seguinte forma:
+4. Conecte uma das portas GND do microcontrolador na indução do negativo.
+    * [exemplo](#Terceiro-Exemplo).
+
+5. Faça a pinagem que conecta o sensor (HC-SR04) ao microcontrolador (ESP32) da seguinte forma:
    * O pino VCC do sensor deve ser interligado na porta 5V do microcontrolador.
 
    * Para controle de I/O (INPUT, OUTPUT) os pinos TRIG e ECHO do sensor devem ser interligados nas portas 26 e 27 do microcontrolador, respectivamente.
 
    * O pino GND do sensor deve ser interligado na indução de negativo na Protoboard.
 
-   * Uma das portas GND do microcontrolador deve ser interligada na indução do negativo.
+   * [exemplo](#Quarto-Exemplo).
 
-   * [exemplo](#Primeiro-Exemplo).
-
-5. Você deve chegar no seguinte [resultado](#Primeiro-Exemplo).
+6. Você deve chegar no seguinte [resultado](#Quinto-Exemplo).
 
 Agora que o circuito está montado, você pode optar por implementar o código de forma "[simples](#Implementação-Simples)" ou "[avançada](#Implementação-Avançada)".
 
@@ -116,35 +119,15 @@ Baixe o [Unity HUB](https://unity.com/pt/download) e instale a versão "2018.4.2
 
 * Distâncias entre 10 ~ 20 cm movem o cubo para a esqueda.
 
-## Resultado
-
---
-
 ## Conclusão
 
---
+Orientadores:
+* **Dalton Solano dos Reis**.
+* **Miguel Alexandre Wisintainer**.
 
-## Autor
+Desenvolvedor:
 
-* **Anderson Guimarães** - *Criação completa* - [Github](https://github.com/anderson-guimaraes)
-
-## Primeiro Exemplo
-
-<p align='center'>
-  <img src="./img/kit.jpeg" height="400" width="600" >
-</p>
-
-## Segundo Exemplo
-
-<p align='center'>
-  <img src="./img/kit.jpeg" height="400" width="600" >
-</p>
-
-## Itens Utilizados
-
-<p align='center'>
-  <img src="./img/kit.jpeg" height="400" width="600" >
-</p>
+* **Anderson Guimarães** [Github](https://github.com/anderson-guimaraes)
 
 ## PINOUT ESP32
 
@@ -157,3 +140,51 @@ Baixe o [Unity HUB](https://unity.com/pt/download) e instale a versão "2018.4.2
   [Download PDF](http://wiki.amperka.ru/_media/products:esp32-wroom-wifi-devkit-v1:esp32-wroom-wifi-devkit-v1_pinout.pdf)
 
 </div>
+
+## Itens
+
+<p align='center'>
+  <img src="./img/itens.jpeg" height="400" width="600" >
+</p>
+
+## Primeiro Exemplo
+
+<p align='center'>
+  <img src="./img/1p.jpeg" height="400" width="600" >
+</p>
+
+## Segundo Exemplo
+
+<p align='center'>
+  <img src="./img/2p.jpeg" height="450" width="600" >
+</p>
+  
+<p align='center'>
+  <img src="./img/3p.jpeg" height="450" width="600" >
+</p>
+
+## Terceiro Exemplo
+
+<p align='center'>
+  <img src="./img/4p.jpeg" height="400" width="600" >
+</p>
+
+## Quarto Exemplo
+
+<p align='center'>
+  <img src="./img/5p.jpeg" height="450" width="600" >
+</p>
+  
+<p align='center'>
+  <img src="./img/6p.jpeg" height="450" width="600" >
+</p>
+
+<p align='center'>
+  <img src="./img/7p.jpeg" height="450" width="600" >
+</p>
+
+## Quinto Exemplo
+
+<p align='center'>
+  <img src="./img/8p.jpeg" height="400" width="600" >
+</p>

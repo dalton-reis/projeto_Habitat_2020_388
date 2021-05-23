@@ -2,7 +2,7 @@
 
 ![image](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/demo-projeto.gif)
 
-Este repositório pretende demostrar passo a passo como integrar um circuito gerenciado pelo microcontrolador ESP32 que recebe sinal de um sensor de distância ultrassônico HC-SR04 a uma aplicação Unity.
+Este repositório pretende demonstrar passo a passo como integrar um circuito gerenciado pelo microcontrolador ESP32 que recebe sinal de um sensor de distância ultrassônico HC-SR04 a uma aplicação Unity.
 
 ## Montagem do Circuito
 
@@ -76,7 +76,7 @@ Para esse modo o [Arduino IDE](https://www.arduino.cc/en/Main/Software_) deve se
 
     * Abra o monitor serial da IDE (canto superior direito) e selecione a velocidade 9600. A partir desse momento já é possível ver os dados captados pelo sensor.
 
- 8. Faça a integração com o [Unity](#Integracao-Com-Unity).
+ 8. Faça a integração com o [Unity](#Integração-com-Unity).
 
 ## Implementação Avançada
 Para esse modo o [Visual Studio](https://visualstudio.microsoft.com/pt-br/downloads/) deve ser instalado e os seguintes passos seguidos.
@@ -89,14 +89,14 @@ Para esse modo o [Visual Studio](https://visualstudio.microsoft.com/pt-br/downlo
 
 4. Na IDE siga para "View > Other Windows" e abra o "Package Manager Console".
 
-5. Execute os comandos, em caso de falha execute via "CMD" ou "PowerShell" com permissões elevadas:
+5. Execute os comandos, em caso de falha execute via "CMD" ou "PowerShell" com permissões administrativas:
     * dotnet tool install -g nanoFirmwareFlasher
     * dotnet tool update -g nanoFirmwareFlasher
 
 6. Conecte o circuito ao seu computador utilizando o cabo Micro-USB.
     * Abra seu gerenciador de dispositivos e verifique em qual "COM" está alocado.
 
-7. Faça deploy do código para dentro dos microcontrolador.
+7. Faça deploy do código para dentro do microcontrolador.
     * Abra o Package Manager Console e execute, substituindo "#" pelo número da sua COM:  
      nanoff --update --target ESP32_WROOM_32 --serialport COM#  
      Se preferir, também é possível clicar com o botão direito sobre a solução do projeto, e escolher "Deploy Solution".
@@ -109,7 +109,7 @@ Para esse modo o [Visual Studio](https://visualstudio.microsoft.com/pt-br/downlo
 
     * Execute a depuração (F5) do projeto e abra o "output" da IDE em "View > Output" ou "ctrl + w + o". A partir desse momento já é possível ver os dados captados pelo sensor.
 
-8. Faça a integração com o [Unity](#Integracao-Com-Unity).
+8. Faça a integração com o [Unity](#Integração-com-Unity).
 
 ## Integração com Unity
 
@@ -121,11 +121,11 @@ Baixe o [Unity HUB](https://unity.com/pt/download) e instale a versão "2018.4.2
 
 * Ao executar a aplicação deverá ser exibido no console algumas informações de conectividade com o circuito.
 
-* Distâncias entre 0 ~ 10 cm movem o cubo para a direita.
+* Distâncias entre 0 ~ 10 cm movem o cubo para a esquerda.
 
-* Distâncias entre 10 ~ 20 cm movem o cubo para a esqueda.
+* Distâncias entre 10 ~ 20 cm movem o cubo para a direita.
 
-## Referências
+## Participantes
 
 Orientador:
 

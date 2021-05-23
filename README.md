@@ -6,7 +6,7 @@ Este repositório pretende demostrar passo a passo como integrar um circuito ger
 
 ## Desenvolvimento
 
-[Itens](#Itens-Utilizados) utilizados.
+[Itens](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/itens.jpeg) utilizados.
 
 ```
 - 1x Microcontrolador ESP32.
@@ -16,18 +16,20 @@ Este repositório pretende demostrar passo a passo como integrar um circuito ger
 - 5x Fios para condução de energia, sendo um para o negativo.
 ```
 
-Com todos os [itens](#Itens-Utilizados) “em mãos” podemos iniciar a montagem do circuito.
+Com todos os [itens](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/itens.jpeg) “em mãos” podemos iniciar a montagem do circuito.
 
 1. Encaixe o microcontrolador ESP32 na Protoboard.
-    * [exemplo](#Primeiro-Exemplo).
+    * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/1p.jpeg).
 
 2. Escolhas 4 fios (se possível de cores diferentes) e faça a conexão no sensor HC-SR04 nos pinos VCC, TRIG, ECHO, GND.
-    * [exemplo](#Segundo-Exemplo).
+    * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/2p.jpeg). 
+    * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/3p.jpeg).
 
 3. Recomendo que o sistema de [PINOUT](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/pinout.png) do microcontrolador ESP32 seja consultado.
+    * [Download PINOUT.pdf](http://wiki.amperka.ru/_media/products:esp32-wroom-wifi-devkit-v1:esp32-wroom-wifi-devkit-v1_pinout.pdf)
 
 4. Conecte uma das portas GND do microcontrolador na indução do negativo.
-    * [exemplo](#Terceiro-Exemplo).
+    * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/4p.jpeg).
 
 5. Faça a pinagem que conecta o sensor (HC-SR04) ao microcontrolador (ESP32) da seguinte forma:
    * O pino VCC do sensor deve ser interligado na porta 5V do microcontrolador.
@@ -36,9 +38,13 @@ Com todos os [itens](#Itens-Utilizados) “em mãos” podemos iniciar a montage
 
    * O pino GND do sensor deve ser interligado na indução de negativo na Protoboard.
 
-   * [exemplo](#Quarto-Exemplo).
+   * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/5p.jpeg).
 
-6. Você deve chegar no seguinte [resultado](#Quinto-Exemplo).
+   * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/6p.jpeg).
+
+   * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/7p.jpeg).
+
+6. Você deve chegar no seguinte [resultado](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/8p.jpeg).
 
 Agora que o circuito está montado, você pode optar por implementar o código de forma "[simples](#Implementação-Simples)" ou "[avançada](#Implementação-Avançada)".
 
@@ -121,70 +127,14 @@ Baixe o [Unity HUB](https://unity.com/pt/download) e instale a versão "2018.4.2
 
 ## Conclusão
 
-Orientadores:
+Orientador:
+
 * **Dalton Solano dos Reis**.
+
+Colaborador:
+
 * **Miguel Alexandre Wisintainer**.
 
 Desenvolvedor:
 
 * **Anderson Guimarães** [Github](https://github.com/anderson-guimaraes)
-
-## PINOUT ESP32
-
-<p align='center'>
-  <img src="./img/pinout.png" height="400" width="600" >
-</p>
-
-<div align='center'>
-
-  [Download PDF](http://wiki.amperka.ru/_media/products:esp32-wroom-wifi-devkit-v1:esp32-wroom-wifi-devkit-v1_pinout.pdf)
-
-</div>
-
-## Itens
-
-<p align='center'>
-  <img src="./img/itens.jpeg" height="400" width="600" >
-</p>
-
-## Primeiro Exemplo
-
-<p align='center'>
-  <img src="./img/1p.jpeg" height="400" width="600" >
-</p>
-
-## Segundo Exemplo
-
-<p align='center'>
-  <img src="./img/2p.jpeg" height="450" width="600" >
-</p>
-  
-<p align='center'>
-  <img src="./img/3p.jpeg" height="450" width="600" >
-</p>
-
-## Terceiro Exemplo
-
-<p align='center'>
-  <img src="./img/4p.jpeg" height="400" width="600" >
-</p>
-
-## Quarto Exemplo
-
-<p align='center'>
-  <img src="./img/5p.jpeg" height="450" width="600" >
-</p>
-  
-<p align='center'>
-  <img src="./img/6p.jpeg" height="450" width="600" >
-</p>
-
-<p align='center'>
-  <img src="./img/7p.jpeg" height="450" width="600" >
-</p>
-
-## Quinto Exemplo
-
-<p align='center'>
-  <img src="./img/8p.jpeg" height="400" width="600" >
-</p>

@@ -22,7 +22,7 @@ Com todos os [itens](https://github.com/anderson-guimaraes/furb-integracao-esp32
     * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/1p.jpeg).
 
 2. Escolhas 4 fios (se possível de cores diferentes) e faça a conexão no sensor HC-SR04 nos pinos VCC, TRIG, ECHO, GND.
-    * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/2p.jpeg). 
+    * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/2p.jpeg).
     * [exemplo](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/3p.jpeg).
 
 3. Recomendo que o sistema de [PINOUT](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/pinout.png) do microcontrolador ESP32 seja consultado.
@@ -63,7 +63,7 @@ Para esse modo o [Arduino IDE](https://www.arduino.cc/en/Main/Software_) deve se
 
  5. Siga para "Ferramentas > Portas: ..." e selecione a porta alocada disponível.
 
- 6. Obtenha o código [aqui](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/arduino/sketch_mar27a.ino) e implemente.
+ 6. Obtenha o código [aqui](https://github.com/anderson-guimaraes/furb-integracao-esp32/tree/main/arduino) e implemente.
 
  7. Faça deploy do código para dentro dos microcontrolador.
     * Certifique-se que o circuito está conectado ao computador.
@@ -74,7 +74,7 @@ Para esse modo o [Arduino IDE](https://www.arduino.cc/en/Main/Software_) deve se
 
     * Procure na parte superior do microcontrolador pelo botão “EN” e o mantenha pressionado por aproximadamente 5 segundos.
 
-    * Abra o monitor serial da IDE (canto superior direito) e selecione a velocidade 9600.A partir desse momento já é possível ver os dados captados pelo sensor.
+    * Abra o monitor serial da IDE (canto superior direito) e selecione a velocidade 9600. A partir desse momento já é possível ver os dados captados pelo sensor.
 
  8. Faça a integração com o [Unity](#Unity).
 
@@ -85,7 +85,7 @@ Para esse modo o [Visual Studio](https://visualstudio.microsoft.com/pt-br/downlo
 
 2. Adicione a extensão do [nanoFramework](https://marketplace.visualstudio.com/items?itemName=nanoframework.nanoFramework-VS2019-Extension) ao seu VS19, o processo pode ser feito diretamente na IDE.
 
-3. Obtenha o projeto [aqui](https://github.com/anderson-guimaraes/furb-integracao-esp32) e abra na IDE com permissões administrativas.
+3. Obtenha o projeto [aqui](https://github.com/anderson-guimaraes/furb-integracao-esp32/tree/main/nanoframework/NFApp1) e abra na IDE com permissões administrativas.
 
 4. Na IDE siga para "View > Other Windows" e abra o "Package Manager Console".
 

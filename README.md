@@ -1,6 +1,6 @@
 # Integração Microcontrolador ESP32 + Sensor HC-SR04 com Unity
 
---VIDEO
+![image](https://github.com/anderson-guimaraes/furb-integracao-esp32/blob/main/img/demo-projeto.gif)
 
 Este repositório pretende demostrar passo a passo como integrar um circuito gerenciado pelo microcontrolador ESP32 que recebe sinal de um sensor de distância ultrassônico HC-SR04 a uma aplicação Unity.
 

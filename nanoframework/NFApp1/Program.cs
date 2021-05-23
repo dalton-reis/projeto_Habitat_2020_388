@@ -8,8 +8,6 @@ namespace NFApp1
     {
         public static void Main()
         {
-            Debug.WriteLine($"Iniciando...");
-
             const int TRIGGER_PIN_SAIDA = 26;
             const int ECHO_PIN_ENTRADA = 27;
 
@@ -21,10 +19,7 @@ namespace NFApp1
                 {
                     float distancia = device.ObterDistancia();
 
-                    if (distancia == -1)
-                        Debug.WriteLine($"Fora de alcance");
-                    else
-                        Debug.WriteLine($"Distancia {distancia} cm");
+                    Debug.WriteLine($"{distancia}");
 
                     Thread.Sleep(TimeSpan.FromSeconds(1));
                 }

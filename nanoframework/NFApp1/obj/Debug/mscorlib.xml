@@ -1269,6 +1269,13 @@
             <exception cref="T:System.ArgumentException"><paramref name="fromBase"/> is not 2, 8, 10, or 16.</exception>
             <exception cref="T:System.NotImplementedException">If the platform doesn't have support to convert from non-base 10 values.</exception>
         </member>
+        <member name="M:System.Convert.ToByte(System.Boolean)">
+            <summary>
+            Converts the specified <see cref="T:System.Boolean"/> value to the equivalent 8-bit unsigned integer.
+            </summary>
+            <param name="value">The <see cref="T:System.Boolean"/> value to convert.</param>
+            <returns>The number 1 if <paramref name="value"/> is <see langword="true"/>; otherwise, 0.</returns>
+        </member>
         <member name="M:System.Convert.ToInt16(System.String,System.Int32)">
             <summary>
             Converts the specified string representation of a number to an equivalent 16-bit signed integer.
@@ -4524,7 +4531,7 @@
         </member>
         <member name="P:System.Reflection.MemberInfo.MemberType">
             <summary>
-            When overridden in a derived class, gets a MemberTypes value indicating the type of the member � method, constructor, event, and so on.
+            When overridden in a derived class, gets a MemberTypes value indicating the type of the member method, constructor, event, and so on.
             </summary>
             <value>
             A MemberTypes value indicating the type of member.
@@ -6118,6 +6125,16 @@
             The system clock ticks at a specific rate called the clock resolution. The actual timeout might not be exactly the specified timeout, because the specified timeout will be adjusted to coincide with clock ticks. 
             </remarks>
         </member>
+        <member name="M:System.Threading.Thread.SpinWait(System.Int32)">
+            <summary>
+            Causes a thread to wait the number of times defined by the <paramref name="iterations"/> parameter.
+            </summary>
+            <param name="iterations">A 32-bit signed integer that defines how long a thread is to wait.</param>
+            <remarks>
+            The <see cref="M:System.Threading.Thread.SpinWait(System.Int32)"/> method is useful for implementing locks. Classes in the .NET Framework, such as <see cref="T:System.Threading.Monitor"/> use this method internally. <see cref="M:System.Threading.Thread.SpinWait(System.Int32)"/> essentially puts the processor into a very tight loop, with the loop count specified by the <paramref name="iterations"/> parameter. The duration of the wait therefore depends on the speed of the processor.
+            Contrast this with the <see cref="M:System.Threading.Thread.Sleep(System.Int32)"/> method. A thread that calls <see cref="M:System.Threading.Thread.Sleep(System.Int32)"/> yields the rest of its current slice of processor time, even if the specified interval is zero. Specifying a non-zero interval for <see cref="M:System.Threading.Thread.Sleep(System.Int32)"/> removes the thread from consideration by the thread scheduler until the time interval has elapsed.
+            </remarks>
+        </member>
         <member name="P:System.Threading.Thread.CurrentThread">
             <summary>
             Gets the currently running thread.
@@ -6208,7 +6225,7 @@
         <member name="F:System.Threading.ThreadState.WaitSleepJoin">
             <summary>
             The thread is blocked. This could be the result of calling Thread.Sleep or Thread.Join, of requesting a lock � for example, by calling Monitor.Enter 
-            or Monitor.Wait � or of waiting on a thread synchronization object such as ManualResetEvent.
+            or Monitor.Wait or of waiting on a thread synchronization object such as ManualResetEvent.
             </summary>
         </member>
         <member name="F:System.Threading.ThreadState.Suspended">
@@ -6245,6 +6262,59 @@
             For threading methods that accept a timeout parameter of type <see cref="T:System.TimeSpan"/>, such as <see cref="M:System.Threading.Thread.Sleep(System.TimeSpan)"/> and <see cref="M:System.Threading.Thread.Join(System.TimeSpan)"/>, this value is used to suspend the thread indefinitely. However, in most cases, we recommend that you use other <see cref="N:System.Threading"/> classes such as <see cref="T:System.Threading.AutoResetEvent"/>, <see cref="T:System.Threading.ManualResetEvent"/>, <see cref="T:System.Threading.Monitor"/> or <see cref="T:System.Threading.WaitHandle"/> instead to synchronize threads or manage resources. 
             The value of this field is -00:00:00.0010000, or -1 millisecond.
             </remarks>
+        </member>
+        <member name="T:System.Threading.SpinWait">
+            <summary>
+            Provides support for spin-based waiting.
+            </summary>
+            <remarks>
+            <para>
+            <see cref="T:System.Threading.SpinWait"/> encapsulates common spinning logic. On single-processor machines, yields are
+            always used instead of busy waits, and on computers with Intel™ processors employing Hyper-Threading™
+            technology, it helps to prevent hardware thread starvation. SpinWait encapsulates a good mixture of
+            spinning and true yielding.
+            </para>
+            <para>
+            <see cref="T:System.Threading.SpinWait"/> is a value type, which means that low-level code can utilize SpinWait without
+            fear of unnecessary allocation overheads. SpinWait is not generally useful for ordinary applications.
+            In most cases, you should use the synchronization classes provided by the .NET Framework, such as
+            <see cref="T:System.Threading.Monitor"/>. For most purposes where spin waiting is required, however,
+            the <see cref="T:System.Threading.SpinWait"/> type should be preferred over the <see
+            cref="M:System.Threading.Thread.SpinWait(System.Int32)"/> method.
+            </para>
+            <para>
+            While SpinWait is designed to be used in concurrent applications, it is not designed to be
+            used from multiple threads concurrently.  SpinWait's members are not thread-safe.  If multiple
+            threads must spin, each should use its own instance of SpinWait.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:System.Threading.SpinWait.SpinOnce">
+            <summary>
+            Performs a single spin.
+            </summary>
+            <remarks>
+            This is typically called in a loop, and may change in behavior based on the number of times a
+            <see cref="M:System.Threading.SpinWait.SpinOnce"/> has been called thus far on this instance.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.SpinWait.SpinUntil(System.TimeSpan)">
+            <summary>
+            Spins until the specified timeout is expired.
+            </summary>
+            <param name="timeout">
+            A <see cref="T:System.TimeSpan"/> that represents the number of milliseconds to wait.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout"/> is a negative number
+            other than -1 milliseconds, which represents an infinite time-out 
+            -or- timeout is greater than <see cref="F:System.Int32.MaxValue"/>.</exception>
+        </member>
+        <member name="M:System.Threading.SpinWait.SpinUntil(System.Int32)">
+            <summary>
+            Spins until the specified timeout is expired.
+            </summary>
+            <param name="millisecondsTimeout">The number of milliseconds to wait.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout"/> is a 
+            negative number other than -1, which represents an infinite time-out.</exception>
         </member>
         <member name="T:System.Threading.TimerCallback">
             <summary>
@@ -6301,7 +6371,7 @@
         </member>
         <member name="T:System.Threading.WaitHandle">
             <summary>
-            Encapsulates operating system�specific objects that wait for exclusive access to shared resources.
+            Encapsulates operating system specific objects that wait for exclusive access to shared resources.
             </summary>
         </member>
         <member name="F:System.Threading.WaitHandle.WaitTimeout">
@@ -6354,6 +6424,29 @@
             </summary>
             <param name="waitHandles">A WaitHandle array containing the objects for which the current instance will wait.</param>
             <returns>The array index of the object that satisfied the wait.</returns>
+        </member>
+        <member name="T:System.TimeoutException">
+            <summary>
+            The exception that is thrown when the time allotted for a process or operation has expired.
+            </summary>
+        </member>
+        <member name="M:System.TimeoutException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.TimeoutException"/> class.
+            </summary>
+        </member>
+        <member name="M:System.TimeoutException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.TimeoutException"/> class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:System.TimeoutException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.TimeoutException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference (Nothing in Visual Basic), the current exception is raised in a catch block that handles the inner exception.</param>
         </member>
         <member name="T:System.TimeSpan">
             <summary>

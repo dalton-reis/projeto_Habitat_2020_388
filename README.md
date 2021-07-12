@@ -127,14 +127,14 @@ Baixe o [Unity HUB](https://unity.com/pt/download) e instale a versão "2018.4.2
 
 ## Participantes
 
-Orientador:
-
-* **Dalton Solano dos Reis**.
-
-Colaborador:
-
-* **Miguel Alexandre Wisintainer**.
-
 Desenvolvedor:
 
 * **Anderson Guimarães** [Github](https://github.com/anderson-guimaraes)
+
+Orientador:
+
+* **prof. Dalton Solano dos Reis** (M.Sc.).
+
+Colaborador Especialista:
+
+* **prof. Miguel Alexandre Wisintainer** (M.Sc.).

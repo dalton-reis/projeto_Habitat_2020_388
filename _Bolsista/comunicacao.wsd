@@ -1,0 +1,15 @@
+@startuml Comunicacao
+group Conexão
+  Microcontrolador -> Servidor: Inicia Servidor Socket
+  Cliente <- Simulador: Inicia Client Socket
+  Cliente -> Servidor: Conecta no Servidor Socket
+  Servidor --> Cliente: Confirma conexão
+end
+group Atualização
+  Microcontrolador -> Servidor: Indentifica alterações e \n envia ao servidor
+  Servidor -> Cliente: Envia mensagem com os dados
+  Cliente -> Simulador: Notifica ao simulador por \n meio de eventos
+  Simulador -> Simulador: Modifica informações \n em tela
+end
+@enduml
+

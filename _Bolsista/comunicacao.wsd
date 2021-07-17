@@ -11,5 +11,6 @@ group Atualização
   Cliente -> Simulador: Notifica ao simulador por \n meio de eventos
   Simulador -> Simulador: Modifica informações \n em tela
 end
+
 @enduml
 

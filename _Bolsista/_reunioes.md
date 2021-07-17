@@ -53,8 +53,8 @@ Promessa: mostrar uma demo funcionando com a placa + FrameWork C# + driver sonar
 
 ## reunião 2021-07-16
 
-![arquiteturaIUT_PC.drawio.svg](arquiteturaIUT_PC.drawio.svg)
-
 ![arquiteturaIUT_Tablet.drawio.svg](arquiteturaIUT_Tablet.drawio.svg)
+
+![arquiteturaIUT_PC.drawio.svg](arquiteturaIUT_PC.drawio.svg)
 
 ![-- Diagrama de Classe --](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/dalton-reis/projeto_Habitat_2020_388/main/_Bolsista/comunicacao.wsd)
